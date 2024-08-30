@@ -1,0 +1,68 @@
+// Спасибо, что читаешь это)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header,
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    height: 30px;
+}
+
+p {
+    padding-bottom: 1em;
+}
+
+.main {
+    flex: 1;
+    background: #ddd;
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: min-content min-content;
+    grid-template-areas:
+        "red yellow"
+        "green yellow"
+        "  .   yellow";
+    align-items: start;
+
+    .section-1 {
+        grid-area: red;
+        background: red;
+    }
+
+    .section-2 {
+        grid-area: green;
+        background: green;
+    }
+
+    .section-3 {
+        grid-area: yellow;
+        background: yellow;
+
+        img {
+            float: left;
+            padding: 30px 30px 15px 0px;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .main {
+        grid-template-columns: auto;
+        grid-template-areas:
+            "red"
+            "yellow"
+            "green";
+    }
+}
